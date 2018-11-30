@@ -28,12 +28,12 @@
     attr_accessor :word, :definitions, :word_id
 
     def initialize(attributes)
-      @word = attributes[:word].capitalize
+      @word = normalize_words(attributes[:word])
       @definitions = []
         # if(attributes.key?()[:definition]
         # if the word has a definition in its hash, it is added via "push", otherwise code does not run
         # end
-      @definitions.push(attributes[:definition])
+      @definitions.push(normalize_words(attributes[:definition]))
       @word_id = @@kidtionary_id
       @@kidtionary_id += 1
 
@@ -47,6 +47,20 @@
 
     def delete_definition(id)
       @definitions.delete_at(id)
+    end
+
+    def normalize_words (one_or_more_words)
+      separate_words = one_or_more_words.split(" ")
+      separate_words.each_with_index do |word, index|
+        if(index == 0)
+          word.gsub!(/\W|\d/, "")
+          word.capitalize!
+        else
+          word.gsub!(/\W|\d/, "")
+          word.downcase!
+        end
+      end
+      separate_words.join(" ")
     end
 
 

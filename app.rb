@@ -11,18 +11,19 @@ end
 
 post ('/') do
   Word.new(params)
+  Word.assign_word_ids
   redirect "/"
 end
 
 get ('/definition/:id') do
   @word = Word.word_search(params[:id].to_i)
-  (erb :defintion)
+  (erb :definition)
 end
 
 post ('/definition/:id') do
   @word = Word.word_search(params[:id].to_i)
-  @word.add_definition(params)
-  redirect 'defintion/:id'
+  @word.add_definition(params[:definition])
+  redirect "definition/#{@word.word_id}"
 end
 
 get ('/delete/:word_id') do
@@ -32,10 +33,10 @@ get ('/delete/:word_id') do
   redirect "/"
 end
 
-get ('/contact/:word_id/:definiition_delete_id') do
+get ('/definition/:word_id/:definiition_delete_id') do
     @word = Word.word_search(params[:word_id].to_i)
     definition_id = params[:definition_delete_id].to_i
     @word.delete_definition(definition_id)
-    (erb :defintion)
+    (erb :definition)
 
   end

@@ -1,24 +1,12 @@
-<h1><%= @word %>:</h1>
+<h1><%= @word.word %>  <%= @word.word_id %>:</h1>
 
 <div class="row">
   <div class="col-md-6">
 
-    <ol>
-      <li><b>First Name:</b> <%= @contact.first_name %></li>
-      <li><b>Last Name:</b> <%= @contact.last_name %></li>
-      <li><b>Job Title:</b> <%= @contact.job_title %></li>
-      <li><b>Company</b>: <%= @contact.company %></li>
-      <li><b>Contact Type:</b> <%= @contact.contact_type %></li>
-    </ol>
-  </div>
-
-
-  <div class="col-md-6">
-
-    <% @contact.addresses.each_with_index do |address_hash, index|   %>
+    <% @word.definitions.each_with_index do |definition, index| %>
     <ul>
 
-      <li id="<%= index %>"> <a href = "/contact/<%= @contact.contact_id %>/<%= index %>">X</a> Address <%= (index+1) %> : <%= address_hash[:address_one] %>, <%= address_hash[:address_two] %>, <%= address_hash[:city] %>, <%= address_hash[:state] %>, <%= address_hash[:postal_code] %></li>
+      <li id="<%= index %>"> <a href = "/definition/<%= @word.word_id %>/<%= index %>">X</a> Definition <%= (index+1) %> : <%= definition %></li>
 
     </ul>
     <% end %>
@@ -26,11 +14,11 @@
   </div>
 
 </div>
-  <form action="/contact/<%= @contact.contact_id %>" method="post">
+  <form action="/definition/<%= @word.word_id %>" method="post">
     New Definition:<br>
-    <input type="text" name="address_one" value="">
+    <input type="text" name="definition" value="">
     <br>
     <input type="submit" value="Submit">
   </form>
 
-  <a href = "/">Return to Contact List.</a>
+  <a href = "/">Return to Main Page.</a>

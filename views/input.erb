@@ -20,7 +20,7 @@
   <ul>
 
     <% @kidtionary.each do |word|   %>
-    <li id="<%= word.word_id %>"> <a href="/delete/<%= word.word_id %>">[delete]</a><a href="/defintion/<%= word.word_id %>"> <%= word.word %> </a></li>
+    <li id="<%= word.word_id %>"> <a href="/delete/<%= word.word_id %>">[delete]</a><a href="/definition/<%= word.word_id %>"> <%= word.word %> </a></li>
     <% end %>
 
 

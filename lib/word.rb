@@ -28,7 +28,7 @@
     attr_accessor :word, :definitions, :word_id
 
     def initialize(attributes)
-      @word = attributes[:word]
+      @word = attributes[:word].capitalize
       @definitions = []
         # if(attributes.key?()[:definition]
         # if the word has a definition in its hash, it is added via "push", otherwise code does not run

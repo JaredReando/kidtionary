@@ -2,14 +2,14 @@
 
 <div class="row">
   <div class="col-md-6">
-
-    <% @word.definitions.each_with_index do |definition, index| %>
+    <h3>Definitions:</h3>
     <ul>
+    <% @word.definitions.each_with_index do |definition, index| %>
 
-      <li id="<%= index %>"> <a href = "/definition/<%= @word.word_id %>/<%= index %>">X</a> Definition <%= (index+1) %> : <%= definition %></li>
+      <li id="<%= index %>"> <a href = "/definition/<%= @word.word_id %>/<%= index %>">X</a> <%= (index+1) %> - <%= definition %></li>
 
-    </ul>
     <% end %>
+    </ul>
 
   </div>
 
@@ -21,4 +21,4 @@
     <input type="submit" value="Submit">
   </form>
 
-  <a href = "/">Return to Main Page.</a>
+  <a href = "/">Kidtionary Home</a>

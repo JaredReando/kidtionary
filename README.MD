@@ -42,19 +42,19 @@ _Questions or feedback: jaredreando@gmail.com_
 
     * README should include application name, author name, description, setup instructions, licensing.
 
-- [] Sinatra application uses views, instance variables and forms.
+- [x] Sinatra application uses views, instance variables and forms.
 
-- [] Sinatra routes process GET and POST requests/responses.
+- [x] Sinatra routes process GET and POST requests/responses.
 
 - [] Project includes thorough and passing integration specs.
 
 - [] Application is deployed to Heroku (Include the link in your README).
 
-- [] Project demonstrates a thorough understanding of this weeks concepts. If prompted, you can discuss your with an instructor using correct terminology.
+- [x] Project demonstrates a thorough understanding of this weeks concepts. If prompted, you can discuss your with an instructor using correct terminology.
 
 - [] Project is in a polished, portfolio-quality state.
 
-- [] Required functionality was present by the end of class on Friday.
+- [x] Required functionality was present by the end of class on Friday.
 
 
 ### License

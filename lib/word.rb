@@ -3,50 +3,47 @@
 
     @@kidtionary = []
 
-    def self.show_all_contacts
-      @@contact_list
+    @@kidtionary_id = 0
+
+    def self.show_all_words
+      @@kidtionary
     end
 
-    def self.find_contact (contact_id)
-      @@contact_list[contact_id]
+    def self.word_search (word_id)
+      @@kidtionary[word_id]
     end
 
-    def self.delete_contact (contact_id)
-      @@contact_list.delete_at(contact_id)
-      self.assign_contact_ids
+    def self.delete_word (word_id)
+      @@kidtionary.delete_at(word_id)
+      self.assign_word_ids
     end
 
-    def self.assign_contact_ids
-      if(@@contact_list != [])
-        @@contact_list.each_with_index do |contact, index|
-          contact.contact_id = index
+    def self.assign_word_ids
+      if(@@kidtionary != [])
+        @@kidtionary.each_with_index do |word, index|
+          word.word_id = index
         end
       end
     end
 
-    attr_reader :first_name, :last_name, :job_title, :company, :contact_type, :addresses
-    attr_accessor :contact_id
+    attr_accessor :word, :defintion
 
     def initialize(attributes)
-      ## also @@frist_name = attributes.fetch(:first_name)
-      @first_name = attributes[:first_name]
-      @last_name = attributes[:last_name]
-      @job_title = attributes[:job_title]
-      @company = attributes[:company]
-      @contact_type = attributes[:contact_type]
-      @contact_id = @@contact_list.length
+      @word = attributes[:word]
       @definitions = []
+        # if(attributes.key?()[:definition]
+        # if the word has a definition in its hash, it is added via "push", otherwise code does not run
+        # end
+      @definition.push(attributes[:defintion])
+      @word_id = @@kidtionary_id
+      @@kidtionary_id += 1
 
-      @@contact_list.push(self)
+      @@kidtionary.push(self)
 
     end
 
-    def full_name
-      @first_name + " " + @last_name
-    end
-
-    def add_address(attributes)
-      @addresses.push(attributes)
+    def add_defintion(definition)
+      @definitions.push(defintion)
     end
 
     def delete_definition(id)

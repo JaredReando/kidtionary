@@ -1,19 +1,16 @@
 <h1>Welcome to Kidtionary!</h1>
 <p>Kidtionary is a fun place to learn (and create!) words.</p>
 <p>To get started, enter a word and defintion and click 'Add Word'</p>
-<p>You word will appear in the list below. Neat!</p>
+<p>Your word will appear in the list below. Neat!</p>
 <br><br>
 <p>Click on a word to see its definition.</p>
 
 <form action="/" method="post">
   Word:<br>
-  <input type="text" name="first_name" value="">
+  <input type="text" name="word" value="">
   <br>
   Definition:<br>
-  <input type="text" name="last_name" value="">
-  <br>
-  Part of Speech:<br>
-  <input type="text" name="job_title" value="">
+  <input type="text" name="definition" value="">
   <br><br><br>
   <input class="btn-success" type="submit" value="Submit">
 </form>
@@ -22,7 +19,7 @@
 <div>
   <ul>
 
-    <% @dictionary.each do |word|   %>
+    <% @kidtionary.each do |word|   %>
     <li id="<%= word.word_id %>"> <a href="/delete/<%= word.word_id %>">[delete]</a><a href="/defintion/<%= contact.contact_id %>"> <%= contact.full_name %> </a></li>
     <% end %>
 

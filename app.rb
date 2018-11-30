@@ -5,7 +5,7 @@ require('./lib/word')
 require('pry')
 
 get ('/') do
-  @contact_list = Contact.show_all_contacts
+  @kidtionary = Word.show_all_words
   (erb :input)
 end
 

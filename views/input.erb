@@ -1,0 +1,33 @@
+<h1>Contact List</h1>
+
+<form action="/" method="post">
+  First name:<br>
+  <input type="text" name="first_name" value="">
+  <br>
+  Last name:<br>
+  <input type="text" name="last_name" value="">
+  <br>
+  Job title:<br>
+  <input type="text" name="job_title" value="">
+  <br>
+  Company:<br>
+  <input type="text" name="company" value="">
+  <br>
+  Contact Type:<br>
+  <input type="text" name="contact_type" value="">
+  <br><br>
+  <input class="btn-success" type="submit" value="Submit">
+</form>
+
+
+<div>
+  <ul>
+
+    <% @contact_list.each do |contact|   %>
+    <li id="<%= contact.contact_id %>"> <a href="/delete/<%= contact.contact_id %>">[delete]</a><a href="/contact/<%= contact.contact_id %>"> <%= contact.full_name %> </a></li>
+    <% end %>
+
+
+  </ul>
+
+</div>

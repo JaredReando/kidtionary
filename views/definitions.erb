@@ -1,0 +1,48 @@
+<h1><%= @contact.full_name %>:</h1>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <ol>
+      <li><b>First Name:</b> <%= @contact.first_name %></li>
+      <li><b>Last Name:</b> <%= @contact.last_name %></li>
+      <li><b>Job Title:</b> <%= @contact.job_title %></li>
+      <li><b>Company</b>: <%= @contact.company %></li>
+      <li><b>Contact Type:</b> <%= @contact.contact_type %></li>
+    </ol>
+  </div>
+
+
+  <div class="col-md-6">
+
+    <% @contact.addresses.each_with_index do |address_hash, index|   %>
+    <ul>
+
+      <li id="<%= index %>"> <a href = "/contact/<%= @contact.contact_id %>/<%= index %>">X</a> Address <%= (index+1) %> : <%= address_hash[:address_one] %>, <%= address_hash[:address_two] %>, <%= address_hash[:city] %>, <%= address_hash[:state] %>, <%= address_hash[:postal_code] %></li>
+
+    </ul>
+    <% end %>
+
+  </div>
+
+</div>
+  <form action="/contact/<%= @contact.contact_id %>" method="post">
+    Address 1:<br>
+    <input type="text" name="address_one" value="">
+    <br>
+    Address 2:<br>
+    <input type="text" name="address_two" value="">
+    <br><br>
+    City:<br>
+    <input type="text" name="city" value="">
+    <br><br>
+    State:<br>
+    <input type="text" name="state" value="">
+    <br><br>
+    Postal Code:<br>
+    <input type="text" name="postal_code" value="">
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <a href = "/">Return to Contact List.</a>

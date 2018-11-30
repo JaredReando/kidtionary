@@ -10,33 +10,32 @@ get ('/') do
 end
 
 post ('/') do
-  Contact.new(params)
+  Word.new(params)
   redirect "/"
 end
 
-get ('/contact/:id') do
-  @contact = Contact.find_contact(params[:id].to_i)
-  (erb :contact)
+get ('/definition/:id') do
+  @word = Word.word_search(params[:id].to_i)
+  (erb :defintion)
 end
 
-post ('/contact/:id') do
-  @contact = Contact.find_contact(params[:id].to_i)
-  @contact.add_address(params)
-  redirect 'contact/:id'
-  # (erb :contact)
+post ('/definition/:id') do
+  @word = Word.word_search(params[:id].to_i)
+  @word.add_definition(params)
+  redirect 'defintion/:id'
 end
 
-get ('/delete/:contact_id') do
-  contact_id = params[:contact_id].to_i
-  Contact.delete_contact(contact_id)
-  @contact_list = Contact.show_all_contacts
+get ('/delete/:word_id') do
+  word_id = params[:word_id].to_i
+  Word.delete_word(word_id)
+  @dictionary = Word.show_all_words
   redirect "/"
 end
 
-get ('/contact/:contact_id/:address_delete_id') do
-    @contact = Contact.find_contact(params[:contact_id].to_i)
-    address_id = params[:address_delete_id].to_i
-    @contact.delete_address(address_id)
-    (erb :contact)
+get ('/contact/:word_id/:definiition_delete_id') do
+    @word = Word.word_search(params[:word_id].to_i)
+    definition_id = params[:definition_delete_id].to_i
+    @word.delete_definition(definition_id)
+    (erb :defintion)
 
   end

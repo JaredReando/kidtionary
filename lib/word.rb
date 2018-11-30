@@ -25,7 +25,7 @@
       end
     end
 
-    attr_accessor :word, :definition, :word_id
+    attr_accessor :word, :definitions, :word_id
 
     def initialize(attributes)
       @word = attributes[:word]

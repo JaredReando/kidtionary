@@ -1,21 +1,20 @@
-<h1>Contact List</h1>
+<h1>Welcome to Kidtionary!</h1>
+<p>Kidtionary is a fun place to learn (and create!) words.</p>
+<p>To get started, enter a word and defintion and click 'Add Word'</p>
+<p>You word will appear in the list below. Neat!</p>
+<br><br>
+<p>Click on a word to see its definition.</p>
 
 <form action="/" method="post">
-  First name:<br>
+  Word:<br>
   <input type="text" name="first_name" value="">
   <br>
-  Last name:<br>
+  Definition:<br>
   <input type="text" name="last_name" value="">
   <br>
-  Job title:<br>
+  Part of Speech:<br>
   <input type="text" name="job_title" value="">
-  <br>
-  Company:<br>
-  <input type="text" name="company" value="">
-  <br>
-  Contact Type:<br>
-  <input type="text" name="contact_type" value="">
-  <br><br>
+  <br><br><br>
   <input class="btn-success" type="submit" value="Submit">
 </form>
 
@@ -23,8 +22,8 @@
 <div>
   <ul>
 
-    <% @contact_list.each do |contact|   %>
-    <li id="<%= contact.contact_id %>"> <a href="/delete/<%= contact.contact_id %>">[delete]</a><a href="/contact/<%= contact.contact_id %>"> <%= contact.full_name %> </a></li>
+    <% @dictionary.each do |word|   %>
+    <li id="<%= word.word_id %>"> <a href="/delete/<%= word.word_id %>">[delete]</a><a href="/defintion/<%= contact.contact_id %>"> <%= contact.full_name %> </a></li>
     <% end %>
 
 

@@ -23,6 +23,8 @@ end
 post ('/definition/:id') do
   @word = Word.word_search(params[:id].to_i)
   @word.add_definition(params[:definition])
+  # binding.pry
+  # @word.normalize_words(@word.definitions[(@word.definitions.length)-1])
   redirect "definition/#{@word.word_id}"
 end
 

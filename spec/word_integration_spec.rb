@@ -9,18 +9,18 @@ describe('Adding a new word', {:type => :feature}) do
     fill_in('word', with: 'magic')
     fill_in('definition', with: 'look ma, no hands')
     click_button('Submit')
-    expect(page).to have_content('magic')
+    expect(page).to have_content('Magic')
   end
 end
 
-describe('viewing a word definition', {:type => :feature}) do
-  it('navigates user to word page to view definition') do
-    visit('/')
-    fill_in('word', with: 'magic')
-    fill_in('definition', with: 'look ma, no hands')
-    click_button('Submit')
-    save_and_open_page
-    click_link('/definition/0')
-    expect(page).to have_content('look ma, no hands')
-  end
-end
+# describe('viewing a word definition', {:type => :feature}) do
+#   it('navigates user to word page to view definition') do
+#     visit('/')
+#     fill_in('word', with: 'magic')
+#     fill_in('definition', with: 'look ma, no hands')
+#     click_button('Submit')
+#     save_and_open_page
+#     click_link('/definition/0')
+#     expect(page).to have_content('look ma, no hands')
+#   end
+# end

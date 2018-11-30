@@ -30,9 +30,6 @@
     def initialize(attributes)
       @word = normalize_words(attributes[:word])
       @definitions = []
-        # if(attributes.key?()[:definition]
-        # if the word has a definition in its hash, it is added via "push", otherwise code does not run
-        # end
       @definitions.push(normalize_words(attributes[:definition]))
       @word_id = @@kidtionary_id
       @@kidtionary_id += 1
@@ -42,7 +39,8 @@
     end
 
     def add_definition(definition)
-      @definitions.push(definition)
+      normalized_definition = normalize_words(definition)
+      @definitions.push(normalized_definition)
     end
 
     def delete_definition(id)

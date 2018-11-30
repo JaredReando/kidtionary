@@ -1,4 +1,4 @@
-<h1><%= @word.word %>  <%= @word.word_id %>:</h1>
+<h1><%= @word.word %></h1>
 
 <div class="row">
   <div class="col-md-6">
@@ -6,7 +6,7 @@
     <ul>
     <% @word.definitions.each_with_index do |definition, index| %>
 
-      <li id="<%= index %>"> <a href = "/definition/<%= @word.word_id %>/<%= index %>">X</a> <%= (index+1) %> - <%= definition %></li>
+      <li id="<%= index %>"> <a href = "/definition/<%= @word.word_id %>/<%= index %>">[delete]</a> <%= (index+1) %> - <%= definition %></li>
 
     <% end %>
     </ul>

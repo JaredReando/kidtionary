@@ -2,7 +2,6 @@
   class Word
 
     @@kidtionary = []
-
     @@kidtionary_id = 0
 
     def self.show_all_words
@@ -26,7 +25,7 @@
       end
     end
 
-    attr_accessor :word, :defintion
+    attr_accessor :word, :definition, :word_id
 
     def initialize(attributes)
       @word = attributes[:word]
@@ -34,7 +33,7 @@
         # if(attributes.key?()[:definition]
         # if the word has a definition in its hash, it is added via "push", otherwise code does not run
         # end
-      @definition.push(attributes[:defintion])
+      @definitions.push(attributes[:definition])
       @word_id = @@kidtionary_id
       @@kidtionary_id += 1
 
@@ -42,8 +41,8 @@
 
     end
 
-    def add_defintion(definition)
-      @definitions.push(defintion)
+    def add_definition(definition)
+      @definitions.push(definition)
     end
 
     def delete_definition(id)

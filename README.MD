@@ -8,6 +8,8 @@
 
 _A simple Sinatra web application built so kids can create their own dictionary. With Kidtionary, you can record real words, made-up words, or even silly nonsense... it's all up to you! Added words can be edited, sorted, or deleted, and can also receive additional definitions._
 
+View this site hosted on Heroku _[here](https://www.apple.com/)_
+
 ## Setup/Installation Requirements
 
 * Clone this project to your local drive. Link: https://github.com/JaredReando/kidtionary/
@@ -26,17 +28,17 @@ _Questions or feedback: jaredreando@gmail.com_
 
 - [x] Objects are created from a custom class with custom methods.
 
-- [] Specs have complete coverage for the behaviors that need to be tested.
+- [x] Specs have complete coverage for the behaviors that need to be tested.
 
-- [] All specs are passing.
+- [x] All specs are passing.
 
-- [] Logic is easy to understand.
+- [x] Logic is easy to understand.
 
-- [] Code has proper indentation and spacing.
+- [x] Code has proper indentation and spacing.
 
-- [] Variable names are descriptive.
+- [x] Variable names are descriptive.
 
-- [] Good Git documentation (regular commits with clear, consistently formatted messages and complete README).
+- [x] Good Git documentation (regular commits with clear, consistently formatted messages and complete README).
 
     * Message syntax should complete the sentence "This commit will..."; for example "update image files on the home page".
 
@@ -46,13 +48,13 @@ _Questions or feedback: jaredreando@gmail.com_
 
 - [x] Sinatra routes process GET and POST requests/responses.
 
-- [] Project includes thorough and passing integration specs.
+- [x] Project includes thorough and passing integration specs.
 
-- [] Application is deployed to Heroku (Include the link in your README).
+- [x] Application is deployed to Heroku (Include the link in your README).
 
 - [x] Project demonstrates a thorough understanding of this weeks concepts. If prompted, you can discuss your with an instructor using correct terminology.
 
-- [] Project is in a polished, portfolio-quality state.
+- [x] Project is in a polished, portfolio-quality state.
 
 - [x] Required functionality was present by the end of class on Friday.
 

@@ -32,10 +32,9 @@
       @definitions = []
       @definitions.push(normalize_words(attributes[:definition]))
       @word_id = @@kidtionary_id
+      
       @@kidtionary_id += 1
-
       @@kidtionary.push(self)
-
     end
 
     def add_definition(definition)

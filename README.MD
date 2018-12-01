@@ -8,7 +8,7 @@
 
 _A simple Sinatra web application built so kids can create their own dictionary. With Kidtionary, you can record real words, made-up words, or even silly nonsense... it's all up to you! Added words can be edited, sorted, or deleted, and can also receive additional definitions._
 
-View this site hosted on Heroku _[here](https://www.apple.com/)_
+View this site hosted _[here](https://glacial-ravine-14472.herokuapp.com/)_ on Heroku.
 
 ## Setup/Installation Requirements
 

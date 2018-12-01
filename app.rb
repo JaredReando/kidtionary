@@ -23,8 +23,6 @@ end
 post ('/definition/:id') do
   @word = Word.word_search(params[:id].to_i)
   @word.add_definition(params[:definition])
-  # binding.pry
-  # @word.normalize_words(@word.definitions[(@word.definitions.length)-1])
   redirect "definition/#{@word.word_id}"
 end
 
@@ -36,9 +34,8 @@ get ('/delete/:word_id') do
 end
 
 get ('/definition/:word_id/:definiition_delete_id') do
-    @word = Word.word_search(params[:word_id].to_i)
-    definition_id = params[:definition_delete_id].to_i
-    @word.delete_definition(definition_id)
-    (erb :definition)
-
-  end
+  @word = Word.word_search(params[:word_id].to_i)
+  definition_id = params[:definition_delete_id].to_i
+  @word.delete_definition(definition_id)
+  (erb :definition)
+end

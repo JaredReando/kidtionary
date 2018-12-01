@@ -5,12 +5,9 @@
     <h3>Definitions:</h3>
     <ul>
     <% @word.definitions.each_with_index do |definition, index| %>
-
       <li id="<%= index %>"> <a href = "/definition/<%= @word.word_id %>/<%= index %>">[delete]</a> <%= (index+1) %> - <%= definition %></li>
-
     <% end %>
     </ul>
-
   </div>
 
 </div>
@@ -20,5 +17,5 @@
     <br>
     <input type="submit" value="Submit">
   </form>
-
+  <br><br><br>
   <a href = "/">Kidtionary Home</a>
